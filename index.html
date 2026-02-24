@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-4">
+
+  <header class="w-[80%] mx-auto py-12">
+    <h1 class="font-bold text-black text-3xl py-5">Job Application Tracker</h1>
+
+    <div class="sm:grid-cols-3 grid grid-cols-1 gap-7">
+
+      <div class="p-5 rounded-3xl bg-white">
+        <p>Total</p>
+        <p id="totalCount">0</p>
+
+      </div>
+      <div class="p-5 rounded-3xl bg-white">
+        <p>Interview</p>
+        <p id="interviewCount">0</p>
+      </div>
+      <div class="p-5 rounded-3xl bg-white">
+        <p>Rejected</p>
+        <p id="rejectedCount">0</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION HEADER -->
+  <section class="max-w-6xl mx-auto bg-white p-4 rounded-lg shadow">
+
+    <!-- Title + Counts -->
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-bold">Available Jobs</h2>
+      <div class="flex gap-4 text-sm">
+        <span>All (<span id="allCount">8</span>)</span>
+        <span>Interview (<span id="interviewCount">0</span>)</span>
+        <span>Rejected (<span id="rejectedCount">0</span>)</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-3 mt-4">
+      <button onclick="setTab('all')" id="allTab" class="px-6 py-3 rounded bg-[#3B82F6] text-white">
+        All
+      </button>
+      <button onclick="setTab('interview')" id="interviewTab" class="px-4 py-2 rounded bg-gray-200">
+        Interview
+      </button>
+      <button onclick="setTab('rejected')" id="rejectedTab" class="px-4 py-2 rounded bg-gray-200">
+        Rejected
+      </button>
+    </div>
+
+    <!-- Job Cards -->
+    <div id="jobContainer" class="grid grid-cols-1 gap-4 mt-6">
+    </div>
+
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
